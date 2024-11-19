@@ -109,7 +109,7 @@ window.onload = function() {
         <div class="avatar">
             <img src="${avatarUrl}" alt="AIloha Avatar">
         </div>
-        <div class="text">Hi there! I'm AIloha, your bubbly anime companion. 😊 How can I assist you today?</div>`;
+        <div class="text">Hey there! 🌀 I’m Ailoha, your cute and sassy AI buddy. Ready to dive into some fun, clever chats or should I keep it sweet for now? Your call!</div>`;
     chatLog.appendChild(botMessage);
     scrollChatToBottom();
 };
