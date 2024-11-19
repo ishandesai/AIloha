@@ -1,0 +1,34 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AIloha Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="description" content="Chat with AIloha, your bubbly anime AI companion!">
+    <meta name="keywords" content="AIloha, AI chatbot, anime, chat, sassy AI, waifu, anime girl">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-header">
+            <img src="{{ url_for('static', filename='AIloha.jpg') }}" alt="AIloha Avatar" id="ailoha-image">
+            <h1>AIloha</h1>
+        </div>
+        <div id="chat-log" data-avatar-url="{{ url_for('static', filename='AIloha.jpg') }}"></div>
+        <!-- Typing Indicator -->
+        <div id="typing-indicator">AIloha is typing<span class="dots">...</span></div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Type a message... (max 256 chars)" maxlength="256" onkeydown="if(event.key === 'Enter') sendMessage();" autocomplete="off" />
+            <button onclick="sendMessage()">Send</button>
+            <!-- Character Count Display will be appended here by script.js -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* static/styles.css */
+
+/* Import Google Fonts */
+/* Import Google Fonts */
+/* static/styles.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow: hidden;
+    background: url('AIloha.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Chat Container */
+#chat-container {
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* Chat Header */
+#chat-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Ailoha Image */
+#ailoha-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 204, 249, 0.7);
+}
+
+/* Chat Header Title */
+#chat-header h1 {   
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    color: #ff66cc;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Chat Log */
+#chat-log {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ff99cc transparent;
+}
+
+/* Custom Scrollbar for WebKit */
+#chat-log::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-log::-webkit-scrollbar-thumb {
+    background-color: #ff99cc;
+    border-radius: 4px;
+}
+
+#chat-log::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Messages */
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-end;
+    animation: messageFadeIn 0.5s forwards;
+}
+
+.user {
+    justify-content: flex-end;
+}
+
+.bot {
+    justify-content: flex-start;
+}
+
+.message .text {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    position: relative;
+    font-size: 1em;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user .text {
+    background-color: rgba(204, 229, 255, 0.9);
+    border-radius: 20px 20px 0 20px;
+}
+
+.bot .text {
+    background-color: rgba(255, 204, 249, 0.9);
+    border-radius: 20px 20px 20px 0;
+}
+
+/* Message Avatars */
+.bot .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.bot .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user .avatar {
+    display: none;
+}
+
+/* Input Area */
+#input-area {
+    display: flex;
+    border-top: 1px solid #ff99cc;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ff99cc;
+    border-radius: 20px;
+    font-size: 1em;
+    background: #fff;
+    color: #333;
+}
+
+#user-input::placeholder {
+    color: #999;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #ff66cc;
+}
+
+button {
+    margin-left: 10px;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #ff66cc, #ff99cc);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff99cc, #ff66cc);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes messageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing Indicator */
+#typing-indicator {
+    display: none;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #ff66cc;
+    text-align: left;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    #chat-container {
+        max-width: 100%;
+    }
+
+    #chat-header h1 {
+        font-size: 1.8em;
+    }
+
+    .message .text {
+        max-width: 80%;
+        font-size: 0.95em;
+    }
+
+    #input-area {
+        flex-direction: column;
+    }
+
+    button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
